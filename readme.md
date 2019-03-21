@@ -1,13 +1,15 @@
 ### Introduction
 
-In this guide, we're going to be building a very simple application that just accepts a query string in the URL, renders a template and displays the keys & values in a table.
+In this guide, we're going to be building a very simple Flask application that accepts a query string in the URL, renders a template and displays the query string keys & values in a table.
 
-The puspose of this guide is to cover the setup of a virtual machine and a basic introduction to deploying a Flask application.
+We're going to be deploying the app on a Google Cloud virtual machine.
+
+The puspose of this guide is to cover the setup of a VM and a basic introduction to deploying a Flask application with Nginx & uwsgi.
 
 A few things to note about this guide:
 
 - We won't be using a domain name
-- We won't be generating certificates/serving HTTPS requests
+- We won't be creating certificates/serving HTTPS requests
 - We'll be using Github as a remote repository
 
 ### Dependencies
