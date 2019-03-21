@@ -614,8 +614,8 @@ You should see the query string arguments displayed in the table!
 
 In this scenario, the best way to make changes to your application:
 
-- Make local changes & test the app
-- Push the changes to your Github remote repo
+- Make changes and test locally
+- Push the changes to your remote Github repo
 - Pull the changes from your virtual machine
 
 To pull any changes to you've made to your application, make sure you're in the `app` parent directory:
