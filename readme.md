@@ -526,15 +526,15 @@ sudo systemctl status app
 You should see:
 
 ```sh
-● app.service - uWSGI instance to serve app
+● app.service - A simple Flask uWSGI application
    Loaded: loaded (/etc/systemd/system/app.service; enabled; vendor preset: enabled)
-   Active: active (running) since Thu 2019-03-21 12:25:31 UTC; 20s ago
- Main PID: 6076 (uwsgi)
+   Active: active (running) since Thu 2019-03-21 14:48:12 UTC; 9min ago
+ Main PID: 7580 (uwsgi)
     Tasks: 5 (limit: 667)
    CGroup: /system.slice/app.service
-           ├─6076 /home/julianjamesnash/app/env/bin/uwsgi --ini app.ini
-           ├─6099 /home/julianjamesnash/app/env/bin/uwsgi --ini app.ini
-           └─6100 /home/julianjamesnash/app/env/bin/uwsgi --ini app.ini
+           ├─7580 /home/julianjamesnash/app/env/bin/uwsgi --ini app.ini
+           ├─7592 /home/julianjamesnash/app/env/bin/uwsgi --ini app.ini
+           └─7595 /home/julianjamesnash/app/env/bin/uwsgi --ini app.ini
 ```
 
 Now we can move on to the final step, configuring Nginx!
