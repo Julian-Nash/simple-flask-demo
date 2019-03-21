@@ -642,3 +642,10 @@ If you make any changes to the Nginx `sites-enabled` file, you'll need to restar
 sudo systemctl restart nginx
 ```
 
+### Wrapping up
+
+This was just a quick guide to deploying a Flask app to a virtual machine using Nginx & uWSGI and as you can see, it's relitively simple.
+
+We used Google Cloud but of course, you could achieve the same result using any other provider such as AWS, Linode, Digital Ocean etc. If you do decide to use another cloud platform, you may not have to bother configuring custom firewall rules, it's really platform dependent.
+
+By modern standards, deploying an application this way may seem slow, especially when compared to using Docker or a hosted service like Google App Engine, however I hope it demonstrates that it's really not that difficult!
