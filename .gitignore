@@ -116,6 +116,7 @@ dmypy.json
 
 .vscode
 dump.rdb
+guide.md
 
 # Uncomment the line below if using in production
 # You shouldn't keep your config file in version control

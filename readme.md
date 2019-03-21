@@ -2,7 +2,9 @@
 
 In this guide, we're going to be building a very simple Flask application that accepts a query string in the URL, renders a template and displays the query string keys & values in a table.
 
-We're going to be deploying the app on a Google Cloud virtual machine.
+We're going to be deploying the app on a Google Cloud virtual machine using Ubuntu 18.04.
+
+You can find the small amount of source code at the Github repo <a href="https://github.com/Julian-Nash/simple-flask-demo">Here</a> if you'd like to follow along. 
 
 The puspose of this guide is to cover the setup of a VM and a basic introduction to deploying a Flask application with Nginx & uwsgi.
 
@@ -11,6 +13,15 @@ A few things to note about this guide:
 - We won't be using a domain name
 - We won't be creating certificates/serving HTTPS requests
 - We'll be using Github as a remote repository
+
+### How to follow this guide
+
+There's a few ways to follow along:
+
+- Clone this repo to your local machine and set up a new remote repository
+- Copy the source and create the files/directories yourself on your local machine
+
+Either way, you'll need to push your code to a remote repo as we'll be pulling the code into the virtual macine.
 
 ### Dependencies
 
@@ -24,11 +35,17 @@ A few things to note about this guide:
 - Activate the virtual environment
 - Install the dependencies with `pip install -r requirments.txt` or with `pip install flask uwsgi`
 
+If you're copying the source code and creating the files/directories yourself, be sure to generate a `requirements.txt` file by running the following command from the app parent directory:
+
+```sh
+pip freeze > requirements.txt
+```
+
 ### Running the application with the Flask development server
 
 In this example, the entrypoint to our application is `run.py`. 
 
-Run the following commands in the same directory as `run.py` to run the app with the Flask development server:
+Enter the following commands in the same directory as `run.py` to run the app with the Flask development server:
 
 ```sh
 export FLASK_APP=run.py
@@ -40,7 +57,7 @@ Access the app in your browser at `127.0.0.1:5000`.
 
 ### Running the appliaction with uwsgi locally
 
-To run the application locally with `uwsgi`, run the `uwsgi` command followed by the name of the development `.ini` file:
+To run the application locally with `uwsgi`, run the `uwsgi` command followed by the name of the development `ini` file:
 
 ```sh
 uwsgi dev.ini
@@ -472,7 +489,7 @@ Add the following:
 
 ```sh
 [Unit]
-Description=uWSGI instance to serve app
+Description=A simple Flask uWSGI application
 After=network.target
 
 [Service]
@@ -547,6 +564,14 @@ server {
     }
 }
 ```
+
+If you'd like to use your own domain name, replace `<your_ip_address>` with:
+
+```sh
+server_name example.com www.example.com;
+```
+
+You'll need update your domain registrar to point the domain to the server IP address if you want to use a custom domain, which we're not going to cover in this guide.
 
 We need to link the server block we've just created in `sites-available` to `sites-enabled`:
 
