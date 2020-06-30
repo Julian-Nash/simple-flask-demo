@@ -217,7 +217,7 @@ cd ~/
 Clone the repo, being sure to replace the URL with the URL of YOUR repo!:
 
 ```sh
-git clone https://github.com/Julian-Nash/flask-demo.git
+git clone https://github.com/Julian-Nash/simple-flask-demo.git
 ```
 
 **IMPORTANT**
