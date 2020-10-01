@@ -11,8 +11,8 @@ def index():
     If a query string comes into the URL, it will return a parsed
     dictionary of the query string keys & values, using request.args
     """
-
-    args = None
+ 
+    args = {"Argha":"10001","Bina":"20006","Alex":"909"}
 
     if request.args:
 
